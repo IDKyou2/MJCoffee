@@ -1,0 +1,93 @@
+/* Navbar */
+.color {
+    border: none;
+    background-color: transparent;
+    /*
+    background-color: #664229; 
+    */
+    box-shadow: none;
+}
+
+.nav {
+    font-size: 25px;
+    font-family: 'Hepta Slab', serif;
+    font-weight: bolder;
+    color: black;
+    padding: 0;
+}
+
+.text {
+    font-family: 'Headland One', serif;
+    font-size: 17px;
+    color: black;
+}
+
+
+/* Basic style of the nav-link */
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+
+}
+
+/* Expanding line on hover */
+.nav-link:hover::before {
+    left: 0;
+    right: 0;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: #9A4444;
+    transition: left 0.3s, right 0.3s;
+}
+
+.btn {
+    border: none;
+    background-color: #9A4444;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Headland One', serif;
+    text-transform: capitalize;
+    padding: 8px 30px;
+}
+
+.basket-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 13px;
+}
+
+.basket-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff5c5c;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    z-index: 10;
+    /* ensure it's above the image but not too high to overlap other important elements */
+    transform: translate(50%, -50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dropdown {
+    z-index: 5;
+}
+
+.container .navimg1 {
+    margin-right: 10px;
+    height: 50px;
+}

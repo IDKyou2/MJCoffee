@@ -1,0 +1,87 @@
+body {
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-color: rgb(247, 241, 241);
+}
+
+.navbar {
+   background-color: #fff;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+   font-weight: bold;
+   font-style: oblique;
+   height: 70px;
+}
+
+.nav-link {
+   font-weight: bold;
+}
+
+.nav-item {
+   padding-left: 20px;
+   padding-right: 30px;
+   font-weight: 600;
+}
+
+/* .nav-item a:hover {
+   text-decoration: underline;
+   text-decoration-color: #9A4444;
+   text-decoration-thickness: 0.2em;
+}
+*/
+h2 {
+   font-family: "Times New Roman", Times, serif;
+}
+
+p {
+   font-family: "Times New Roman", Times, serif;
+   font-size: 19px;
+}
+
+a {
+   font-weight: bold;
+   font-family: "Times New Roman", Times, serif;
+}
+
+.card-img-top {
+   transition: transform .2s;
+}
+
+.card-img-top:hover {
+   transform: scale(1.1);
+}
+
+.searchinput {
+   max-width: 190px;
+   background-color: #f5f5f5;
+   color: #242424;
+   padding: .15rem .5rem;
+   min-height: 40px;
+   border-radius: 10px;
+   outline: none;
+   border: none;
+   font-size: 18px;
+   line-height: 1.15;
+   box-shadow: 0px 10px 20px -18px;
+}
+
+.searchinput:focus {
+   border-bottom: 2px solid #5b5fc7;
+   border-radius: 4px 4px 2px 2px;
+}
+
+.searchinputinput:hover {
+   outline: 1px solid lightgrey;
+}
+
+.nav-link.active {
+   border: 2px solid #9A4444;
+   border-radius: 10px;
+   color: #9A4444 !important;
+}
+
+.nav-link {
+   color: black !important;
+}

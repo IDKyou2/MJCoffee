@@ -1,0 +1,29 @@
+.not-available {
+  /* Existing styles for positioning */
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Other styles */
+  padding: 20px;
+  /* Additional styles */
+  background-color: rgba(255, 0, 0, 0.7);
+  /* Red background with transparency */
+  color: white;
+  /* Text color */
+  border-radius: 10px;
+  /* Rounded corners */
+  z-index: 1;
+  /* Ensure it's above the image */
+  width: 80%;
+  /* New styles to center text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Additional styles for text design */
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  /* Adding box shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

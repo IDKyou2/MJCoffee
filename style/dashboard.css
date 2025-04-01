@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.carousel-item h4 {
+    text-shadow: 4px 4px 5px black;
+    font-size: 100px;
+    color: #664222;
+}
+
+.carousel-item p {
+    color: #E2C799;
+    text-shadow: 1px 1px 5px black;
+    font-weight: bold;
+}
+
+.sec3 .about_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    color: black;
+    font-size: 25px;
+    font-family: 'Hepta Slab', serif;
+}
+
+/* carousel */
+.carousel-width-adjust {
+    max-width: 1600px;
+    margin: 30px auto;
+}
+
+.carousel-img {
+    height: 500px;
+    border-radius: 20px;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        max-height: 50vh;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        font-size: 0.8rem;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Above of the menu Area */
+.sec2 .menu_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    color: black;
+    font-size: 25px;
+    font-family: 'Hepta Slab', serif;
+}
+
+.sec2 .menu_header>p {
+    margin: 0;
+}
+
+
+.sec2 .end_menu_header {
+    display: flex;
+    align-items: center;
+}
+
+.sec2 .end_menu_header p.right {
+    margin: 0;
+    line-height: 1;
+}
+
+.right {
+    font-weight: bolder;
+    color: black;
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+}
+
+.menu_header img {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu_header img {
+    height: 30px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .sec2 .menu_header {
+        font-size: 20px;
+    }
+
+    .right {
+        font-size: 12px;
+    }
+
+    .menu_header img {
+        height: 25px;
+        margin-left: 5px;
+    }
+}
+
+
+
+/* menu Area */
+.card .card_style {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50px;
+}
+
+.card_style img {
+    height: 300px;
+    width: 400px;
+}
+
+.card-body p {
+    margin: 0;
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+.menu_header.img {
+    transition: all 0.3s ease;
+}
+
+.menu_header.img:hover {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(99%) saturate(7458%) hue-rotate(359deg) brightness(95%) contrast(110%);
+    /* this will make your image appear red, adjust if necessary */
+    transform: translateY(-5px);
+}
+
+.cart_btn {
+    border: none;
+    background-color: #9A4444;
+    color: whitesmoke;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Headland One', serif;
+    text-transform: capitalize;
+    padding: 8px 30px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.cart_btn:hover {
+    transform: scale(1.05);
+    background-color: #C08261;
+    color: black;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* for the about area design*/
+
+.abt_img img {
+    width: 600px;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.about_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Headland One', serif;
+    font-size: 17px;
+    text-align: justify;
+    line-height: 2;
+}
+
+.col-md-6 {
+    display: flex;
+    align-items: center;
+}
+
+.custom-card-width {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+/* Sign Up*/
+.form-control {
+    border-radius: 10px;
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+    height: 40px;
+    color: black;
+    margin-top: 20px;
+}

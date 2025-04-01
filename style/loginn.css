@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caccount {
+    font-family: 'Headland One', serif;
+    font-size: 10px;
+}
+
+.form-control {
+    border-radius: 10px;
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+    height: 40px;
+}
+
+.outer {
+    margin-top: 20px;
+}
+
+.form-label {
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+}
+
+.text-center .btn {
+    width: 300px;
+}
+
+.custom-card-width {
+    border: black 1px solid;
+    min-width: 300px;
+    width: 500px;
+}
+
+.login_btn {
+    background-color: #9A4444;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Headland One', serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login_btn:hover {
+    transform: scale(1.05);
+    background-color: #9A4444;
+    color: black;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.login_box {
+    margin: 7rem 0;
+}
+
+/* Mobile-first styling */
+.custom-card-width {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .custom-card-width {
+        width: 500px;
+    }
+}

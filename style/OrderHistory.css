@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* For header*/
+.header{
+    font-weight: bolder;
+    color: black;
+    font-size: 30px; 
+    font-family: 'Hepta Slab', serif; 
+    margin-top: 20px;
+}
+
+/*Card*/
+
+.card-text-left{
+    font-family: 'Headland One', serif;
+    font-size: 18px;
+    color: black;
+    margin-left: 50px;
+    font-weight: 500;
+}
+.card-text-right{
+    font-family: 'Headland One', serif;
+    font-size: 18px;
+    color: black;
+    margin-right: 80px;
+    font-weight: 500;
+}
+.card {
+    padding-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0,0,0,0.2); 
+    background-color: #ffffff; 
+    border-radius: .25rem; 
+}
+
+/* Extra Styles for Mobile */
+@media (max-width: 767px) {
+    .card-text-left, .card-text-right {
+        text-align: start;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/*table cart menu*/
+
+.table_design {
+    border-collapse: separate;
+    border-spacing: 0 20px;
+}
+
+.table_design th {
+    border: none !important;
+    font-family: 'Headland One', serif;
+    font-size: 17px;
+    font-weight: bolder !important;
+}
+
+.table_design th, .table_design td {
+    text-align: center;
+    vertical-align: middle;
+}
+.table_design .d-flex {
+    justify-content: start;
+}
+
+.table_design img {
+    display: block; 
+    margin: 0;      
+}
+.table_design {
+    min-width: 1000px;
+}
+
+.table_design td {
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    border-left: none;
+    border-right: none;
+    padding: 0;
+}
+
+.table_design tr:first-child td {
+    border-top: 1.5px solid black;
+}
+
+.table_design tr:last-child td {
+    border-bottom: 1.5px solid black;
+}
+
+.custom-border {
+    border-radius: 10px;
+}
+.btn_edit{
+    background-color: skyblue;
+    border: none;
+    width: 90px;
+    height: 35px;
+    color: rgb(14, 13, 13);
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-family: 'Headland One', serif;
+}
+.btn_delete{
+    background-color: red;
+    border: none;
+    width: 90px;
+    height: 35px;
+    color: white;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-family: 'Headland One', serif;
+}
+.table-responsive {
+    overflow: hidden;
+}
+.table-responsive::-webkit-scrollbar {
+    display: none;
+}
+
+.table-responsive {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+.table_design td, .table_design th {
+    text-align: center;
+    vertical-align: middle;
+}
+.receipt {
+    padding: 7px 15px;
+    margin-right: 10px; 
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Headland One', serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+.margin{
+    margin-bottom: 10px;
+}
+
+
+
+
