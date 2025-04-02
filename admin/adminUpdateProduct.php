@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <?php require_once('dbconn.php'); ?>
+    <?php require_once('../dbconn.php'); ?>
 
     <?php
-    include("loader.php")
+    include("../loader.php")
     ?>
 
     <?php
@@ -36,10 +36,10 @@
     $row = $stmt->fetch();
     ?>
     <br><br>
-    <form action="adminproductedit.php?fooditemID=<?php echo $fooditemID; ?>" method="post" enctype="multipart/form-data">
+    <form action="adminEditProduct.php?fooditemID=<?php echo $fooditemID; ?>" method="post" enctype="multipart/form-data">
         <div class="container">
             <div class="row mx-auto">
-                <a href="manageproduct.php">
+                <a href="adminManageProduct.php">
                     <button type="button" class="btn" style="width: 200px; background-color: #9A4444; color:white;"><i class="bi bi-backspace-fill" style="padding-right: 10px;"></i>Back to Menu</button>
                 </a>
             </div>
@@ -50,7 +50,7 @@
                     <h2 style="text-align: center; font-weight: bold">Update Menu Item</h2><br>
                     <h3 style="font-size: 25px; font-family: Times New Roman;"><strong>Menu Name:</strong> <?php echo $row['menuname'] ?></h3><br>
                     <div class="mb-3">
-                        <label for="menuname" class="form-label">Title</label>
+                        <label for="menuname" class="form-label">Product label</label>
                         <input type="text" id="menuname" name="menuname" value="<?php echo $row['menuname']; ?>" class="form-control">
                     </div>
                     <div class="mb-3">
@@ -60,9 +60,9 @@
                     <div class="mb-3">
                         <label for="menutype" class="form-label">Category</label>
                         <select id="menutype" name="menutype" class="form-control">
-                            <option value="meat" <?php if ($row['menutype'] == 'meat') echo 'selected'; ?>>Meat</option>
-                            <option value="vegetable" <?php if ($row['menutype'] == 'vegetable') echo 'selected'; ?>>Vegetable</option>
-                            <option value="drinks" <?php if ($row['menutype'] == 'drinks') echo 'selected'; ?>>Drinks</option>
+                            <option value="hot coffee" <?php if ($row['menutype'] == 'hot coffee') echo 'selected'; ?>>Hot Coffee</option>
+                            <option value="iced coffee" <?php if ($row['menutype'] == 'iced coffee') echo 'selected'; ?>>Iced coffee</option>
+                            <option value="smoothies" <?php if ($row['menutype'] == 'smoothies') echo 'selected'; ?>>Smoothies</option>
                         </select>
                     </div>
                     <div class="mb-3">

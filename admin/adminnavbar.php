@@ -5,7 +5,7 @@
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand me-2" href="adminhome.php">
-                <img class="logo" style="height: 60px; width: 100px; margin-right: 100px;" src="image/admin2.jpg" loading="lazy">
+                <img class="logo" style="height: 60px; width: 100px; margin-right: 100px;" src="../image/admin2.jpg" loading="lazy">
             </a>
 
             <!-- Toggle button -->
@@ -23,13 +23,13 @@
                         <a class="nav-link" aria-current="page" id="adminhomelink" href="adminhome.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" id="adminhomelink" href="manageproduct.php">Manage Menu Item</a>
+                        <a class="nav-link" aria-current="page" id="adminhomelink" href="adminManageProduct.php">Manage Menu items</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" id="managecustomerLink" href="managecustomer.php">Manage Customer</a>
+                        <a class="nav-link" aria-current="page" id="managecustomerLink" href="admin/managecustomer.php">Manage Customer</a>
                     </li>
                     <li class="nav-item" style="margin-right: 100px;">
-                        <a class="nav-link" aria-current="page" id="searchLink" href="admincustomerorder.php">Order History/Details</a>
+                        <a class="nav-link" aria-current="page" id="searchLink" href="admin/admincustomerorder.php">Order History/Details</a>
                     </li>
                     <li class="nav-item">
                         <div class="d-flex align-items-center ms-auto me-4">
@@ -49,7 +49,7 @@
                                         cancelButtonText: 'Cancel'
                                     }).then((result) => {
                                         if (result.isConfirmed) {
-                                            window.location.href = "logout.php"
+                                            window.location.href = "../logout.php"
                                         }
                                     });
                                 }

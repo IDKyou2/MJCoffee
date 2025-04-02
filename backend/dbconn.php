@@ -2,7 +2,7 @@
    $servername = "localhost";
    $username = "root";
    $password = "";
-   $dbname = "backstage_db";
+   $dbname = "ministore_db";
 
 
    try {

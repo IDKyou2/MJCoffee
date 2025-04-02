@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mj Cafe</title>
+    <title>MJCoffee</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: #D2B48C;">   
     <?php
     include("navbar.php")
     ?>
@@ -33,21 +33,21 @@
     <div class="container">
         <div class="row">
             <div class="shop_header mt-3 col-12">
-                <p class="head">Shop Our Store</p>
+                <p class="head">Pick your order</p>
                 <div class="d-flex flex-column flex-md-row justify-content-between mt-3">
                     <div class="btn-group mb-2 mb-md-0" style="box-shadow: none;">
                         <div class="dropdown">
                             <button class="btn_categ dropdown-toggle" style="border-radius: 10px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cuisines
+                                Coffees
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="?category=all">All Menu</a>
-                                <a class="dropdown-item" href="?category=Meat">Meat</a>
-                                <a class="dropdown-item" href="?category=Vegetable">Vegetables</a>
+                                <a class="dropdown-item" href="?category=hot coffee">Hot coffee</a>
+                                <a class="dropdown-item" href="?category=iced coffee">Iced coffee</a>
                             </div>
                         </div>
                         <button class="btn_categ" style="border-radius: 10px;" onclick="location.href='?category=Drinks';">
-                            Drinks
+                            Smoothies
                         </button>
                     </div>
                     <div class="d-flex align-items-center search mb-2 mb-md-0">

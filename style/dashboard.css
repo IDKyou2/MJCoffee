@@ -27,6 +27,8 @@
     font-family: 'Hepta Slab', serif;
 }
 
+
+
 /* carousel */
 .carousel-width-adjust {
     max-width: 1600px;
@@ -101,6 +103,7 @@
     width: auto;
 }
 
+
 @media (max-width: 768px) {
     .sec2 .menu_header {
         font-size: 20px;
@@ -116,13 +119,10 @@
     }
 }
 
-
-
 /* menu Area */
 .card .card_style {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     border: none;
-    border-radius: 50px;
 }
 
 .card_style img {
@@ -153,19 +153,18 @@
 }
 
 .menu_header.img:hover {
-    filter: brightness(0) saturate(100%) invert(10%) sepia(99%) saturate(7458%) hue-rotate(359deg) brightness(95%) contrast(110%);
-    /* this will make your image appear red, adjust if necessary */
-    transform: translateY(-5px);
+    filter: brightness(0) saturate(100%) invert(16%) sepia(49%) saturate(693%) hue-rotate(349deg) brightness(92%) contrast(88%);
+    transform: translateY(-5px); /* Optional: Adds a slight lift effect */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .cart_btn {
     border: none;
-    background-color: #9A4444;
+    background-color: #6B4226;
     color: whitesmoke;
     border-radius: 10px;
     font-size: 15px;
-    font-family: 'Headland One', serif;
-    text-transform: capitalize;
+    font-family: 'Headland One', serif; 
     padding: 8px 30px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
@@ -181,12 +180,14 @@
 
 
 
-/* for the about area design*/
-
-.abt_img img {
+/* about image design*/
+.aboutUsImage img {
     width: 600px;
     height: 500px;
     margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    
 }
 
 .about_details {

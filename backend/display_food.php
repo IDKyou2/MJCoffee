@@ -1,7 +1,7 @@
 <?php
 require_once('dbconn.php');
 
-$stmt = $conn->prepare("SELECT * FROM fooditem WHERE menutype IN ('meat', 'vegetable') ORDER BY RAND() LIMIT 4");
+$stmt = $conn->prepare("SELECT * FROM fooditem WHERE menutype IN ('hot coffee', 'iced coffee') ORDER BY RAND() LIMIT 4");
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -12,11 +12,14 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-12 col-md-6 col-lg-3 mb-4">
                 <form action="add_to_cart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
                     <input type="hidden" name="fooditemID" value="<?php echo $row['fooditemID']; ?>">
-                    <div class="card h-100 card_style" style="border: none;">
-                        <div class="not-available bg-danger text-light rounded shadow <?php if ($row['availability'] == 'available') echo 'd-none'; ?>">
+                    <div class="card h-100 card_style" style="border-radius: 20px;">
+                        <div
+                            class="not-available bg-danger text-light rounded shadow <?php if ($row['availability'] == 'available')
+                                echo 'd-none'; ?>">
                             Not Available
                         </div>
-                        <img src='data:image/jpeg;base64,<?php echo base64_encode($row['menuprofile']) ?>' alt="image" class="card-img-top img-fluid">
+                        <img src='data:image/jpeg;base64,<?php echo base64_encode($row['menuprofile']) ?>' alt="image"
+                            class="card-img-top img-fluid">
                         <div class="card-body">
                             <p class="card-text mb-3">
                                 <?php echo $row['menuname']; ?>
@@ -26,16 +29,21 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="text-center">
                                 <?php if (isset($_SESSION['customerID'])) { ?>
                                     <?php if ($row['availability'] == 'available') { ?>
-                                        <button type="submit" name="Add_To_Cart_Search" class="cart_btn" style="border-radius: 10px;">
+                                        <button type="submit" name="Add_To_Cart_Search" class="cart_btn"
+                                            style="border-radius: 10px;">
                                             Add to Cart
                                         </button>
                                     <?php } else { ?>
-                                        <button type="button" onclick="itemUnavailable()" class="cart_btn btn-danger" style="border-radius: 10px;">
+                                        <button type="button" onclick="itemUnavailable()" class="cart_btn btn-danger"
+                                            style="border-radius: 10px;">
                                             Unavailable
                                         </button>
                                     <?php } ?>
                                 <?php } else { ?>
-                                    <button type="button" onclick="promptLogin()" class="cart_btn <?php if ($row['availability'] != 'available'); ?>" style="border-radius: 10px;">
+                                    <button type="button" onclick="promptLogin()"
+                                        class="cart_btn <?php if ($row['availability'] != 'available')
+                                            ; ?>"
+                                        style="border-radius: 10px;">
                                         Add to Cart
                                     </button>
                                 <?php } ?>
@@ -79,9 +87,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // For item update
 if (isset($_SESSION['itemUpdated']) && $_SESSION['itemUpdated']) {
     unset($_SESSION['itemUpdated']);
-?>
+    ?>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({
                 icon: 'warning',
                 title: 'Item already added in your cart!',
@@ -91,14 +99,14 @@ if (isset($_SESSION['itemUpdated']) && $_SESSION['itemUpdated']) {
             });
         });
     </script>
-<?php
+    <?php
 }
 // For adding items
 if (isset($_SESSION['itemAdded']) && $_SESSION['itemAdded']) {
     unset($_SESSION['itemAdded']);
-?>
+    ?>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({
                 icon: 'success',
                 title: 'Added to cart!',
@@ -108,6 +116,6 @@ if (isset($_SESSION['itemAdded']) && $_SESSION['itemAdded']) {
             });
         });
     </script>
-<?php
+    <?php
 }
 ?>

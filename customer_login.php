@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
             // Check the role of the user and set the redirect session variable
             if ($get_user['role'] == 'admin') {
-                $_SESSION['redirect'] = "adminhome.php";
+                $_SESSION['redirect'] = "admin/adminhome.php";
             } else if ($get_user['role'] == 'customer') {
                 $_SESSION['redirect'] = "ddashboard.php";
             } else {

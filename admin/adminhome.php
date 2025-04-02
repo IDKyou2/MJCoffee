@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Backstage Cafe: Admin Operation</title>
+  <title>MJCoffee: Admin Operation</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -14,15 +14,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
-  <link rel="stylesheet" href="navardesign/admindesignn.css">
-  <link rel="stylesheet" href="navardesign/tabledesign.css">
+  <link rel="stylesheet" href="../style/admindesignn.css">
+  <link rel="stylesheet" href="../style/tabledesign.css">
   <script defer src="active_link.js"></script>
 
 </head>
 
 <body>
   <?php
-  include('navar/adminnavar.php')
+  include('adminnavbar.php')
 
   ?>
   <br><br><br><br><br>
@@ -32,8 +32,8 @@
   <br>
 
 
-  <?php
-  require('dbconn.php');
+  <?php 
+  require('../dbconn.php');  
 
   $stmt = $conn->prepare("SELECT COUNT(*) as count FROM customer");
   $stmt->execute();
@@ -53,7 +53,7 @@
       </div>
 
       <?php
-      require('dbconn.php');
+      require('../dbconn.php');
 
       $stmt = $conn->prepare("SELECT COUNT(*) as count FROM fooditem");
       $stmt->execute();
@@ -71,8 +71,7 @@
       </div>
 
       <?php
-
-      require('dbconn.php');
+      require('../dbconn.php');
 
       $stmt = $conn->prepare("SELECT COUNT(*) as count FROM ordersummary");
       $stmt->execute();
@@ -123,7 +122,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require_once('dbconn.php');
+                                require_once('../dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM customer");
                                   $stmt->execute();
@@ -189,7 +188,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require('dbconn.php');
+                                require('../dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM fooditem");
                                   $stmt->execute();
@@ -263,7 +262,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require('dbconn.php');
+                                require('../dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM ordersummary");
                                   $stmt->execute();

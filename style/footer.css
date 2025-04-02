@@ -2,44 +2,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 footer {
+    font-family: 'Hepta Slab', serif;
     background-color: black;
     width: 100%;
     padding-top: 10px;
+    color: white;
 }
 
 .foot-container {
     display: grid;
     place-items: center;
-    height: 100%;
 }
 
 .foot_head {
-    color: white;
     font-weight: bolder;
-    font-size: 32px;
-    font-family: 'Hepta Slab', serif;
 }
 
-.foot-container p {
-    margin-top: 20px;
+.trademark {
+    font-size: 25px;
 }
 
 .contact {
-    color: white;
     font-size: 13px;
-    font-family: 'Hepta Slab', serif;
-
+    margin: 0px;
 }
 
 .footer_img {
     display: flex;
-    gap: 15px;
-    height: 40px;
-    margin-top: 10px;
-    align-items: center;
+    gap: 10px;
 }
 
 .footer_img img {
@@ -47,8 +41,6 @@ footer {
 }
 
 .last {
-    color: white;
     font-size: 13px;
-    font-family: 'Hepta Slab', serif;
     margin-bottom: 35px;
 }

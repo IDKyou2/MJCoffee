@@ -73,7 +73,7 @@
                                 <div>
 
 
-                                    <p class="caccount" style="font-size:15px; margin-top:15px;">Don't have an account yet?&nbsp<a href="ddashboard.php#sec4">Create an Account </a></p>
+                                    <p class="caccount" style="font-size:15px; margin-top:15px;">Don't have an account yet?&nbsp<a href="dashboard.php#sec4">Create an Account </a></p>
 
                                 </div>
                                 <div class="text-center pt-1 mb-2 pb-1" style="margin-top: 30px;">

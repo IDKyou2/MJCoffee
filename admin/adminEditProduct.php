@@ -1,5 +1,5 @@
 <?php
-require_once('dbconn.php');
+require_once('../dbconn.php');
 
 try {
     // Check if fooditemID is set in the URL
@@ -42,13 +42,13 @@ try {
             $stmt->execute();
 
             // Redirect to a success page or wherever you need to go after the update
-            header('Location: manageproduct.php');
+            header('Location: adminManageProduct.php');
             exit; // Make sure to exit after redirection
         }
     } else {
         // Handle the case where fooditemID is missing in the URL
         echo "Food item ID is missing in the URL.";
-    }
+    }   
 } catch (PDOException $e) {
     echo "ERROR: " . $e->getMessage();
 }
