@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D2B48C;
+}
+
+
+.caccount {
+    font-size: 10px;
+}
+
+
+.form-control {
+    border-radius: 10px;
+    font-size: 15px;
+    height: 40px;
+}
+
+.outer {
+    margin-top: 10px;
+}
+
+.form-label {
+    font-family: 'Headland One', serif;
+    font-size: 15px;
+}
+
+.text-center {
+    width: 100%;
+}
+
+
+.loginBtn {
+    background-color:  #6B4226; 
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Headland One', serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.loginBtn:hover {
+    transform: scale(1.05);
+    background-color: #9A4444;
+    color: black;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Mobile-first styling */
+.custom-card-width {
+    width: 100%;
+}
+
+.loginContainer {
+    border: black 0px solid;
+    background-color: transparent;
+    border-radius: 20px;
+    display: flex;             /* Enables Flexbo
+    x */
+    justify-content: center;   /* Centers horizontally */
+    align-items: center;       /* Centers vertically */
+    height: 100%;          
+    background-color: transparent; /* Just for visibility */
+}
+
+/* changes colors when form is focused*/
+.outer input:focus {
+    border-color: #6B4226; /* Change border color */
+    background-color: #f0f8ff; /* Light blue background */
+    outline: none; /* Remove default outline */
+    box-shadow: #6B4226; /* Add a glowing effect */
+}
+
+@media (min-width: 768px) {
+    .custom-card-width {
+        width: 500px;
+    }
+}

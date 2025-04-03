@@ -45,16 +45,16 @@
           <!-- Inner -->
           <div class="carousel-inner">
             <!-- Single item -->
-            <div class="carousel-item active">
-              <img src="image/carousel1.jpg" class="d-block w-100 carousel-img" alt="" />
+            <div class=" carousel-item active">
+              <img src="image/bg1.jpg" class="d-block carousel-img" alt="" />
               <div class="carousel-caption d-none d-md-block">
-                <h4 style="color:white; width:auto; height: 400px;"></h4>
+
               </div>
             </div>
 
             <!-- Single item -->
             <div class="carousel-item">
-              <img src="image/carousel1.jpg" class="d-block w-100 carousel-img" alt="" />
+              <img src="image/bg1.jpg" class="d-block w-100 carousel-img" alt="" />
               <div class="carousel-caption d-none d-md-block">
                 <h4 style="height: 420px;"></h4>
                 <p style="color:white; margin-bottom:50px;"></p>
@@ -63,7 +63,7 @@
 
             <!-- Single item -->
             <div class="carousel-item">
-              <img src="image/carousel1.jpg" class="d-block w-900 carousel-img" alt="" />
+              <img src="image/bg1.jpg" class="d-block w-900 carousel-img" alt="" />
               <div class="carousel-caption d-none d-md-block">
                 <h4 style="height: 110px;"></h4>
                 <p style="color:white"></p>
@@ -85,7 +85,7 @@
           <p>Menu</p>
           <div class="end_menu_header d-flex align-items-center">
             <p class="right">See more</p>
-            <a href="menu.php">
+            <a href="index.php">
               <img class="menu_header img" src="image/arrow.svg" alt="right arrow">
             </a>
           </div>
@@ -159,7 +159,6 @@
   </section>
 
 
-
   <section class="sec4" id="sec4">
     <br>
     <div class="container 
@@ -168,20 +167,19 @@
     } else {
       echo 'd-none';
     } ?>">
-
       <hr style=" border:1px solid black;" ;>
-
       <div class="row">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
-              <div class="card rounded-3 text-black custom-card-width"
-                style="border: black 1px solid; min-width: 300px;">
+              <div class="card rounded-3 custom-card-width">
+                <!-- Sets the gap between columns and rows to 0  -->
                 <div class="row g-0">
+                  <!-- On medium (md) screens and larger, the padding increases to 5, and horizontal margins increase to 4.-->
                   <div class="card-body p-md-5 mx-md-4">
 
                     <div class="text-center">
-                      <img src="image/spoon.svg" style="width: 50px; display: inline-block; vertical-align: middle;"
+                      <img src="image/logo-nobg.png" style="width: 50px; display: inline-block; vertical-align: middle;"
                         alt="logo">
                       <p class="nav" style="display: inline-block; margin: 0; vertical-align: middle; font-size:28px;">
                         MJCoffee</p>
@@ -221,8 +219,7 @@
                       <br>
 
                       <div class="text-center pt-1 mb-2 pb-1" style="margin-top: 20px;">
-                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                          style="background-color: #9A4444; color: white; width: 250px;" id="submit" type="submit">Sign
+                        <button class="btn formBtn" id="submit" type="submit">Sign
                           Up</button>
                       </div>
                     </form>
@@ -235,10 +232,7 @@
       </div>
     </div>
   </section>
-
-  </div>
-  </div>
-  </section><br>
+  <br>
 
   <?php
   include("footer.php");

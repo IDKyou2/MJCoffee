@@ -28,21 +28,19 @@
 }
 
 
-
 /* carousel */
 .carousel-width-adjust {
-    max-width: 1600px;
     margin: 30px auto;
 }
 
 .carousel-img {
-    height: 500px;
-    border-radius: 20px;
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.carousel-img {
-    width: 100%;
-}
+
 
 @media (max-width: 576px) {
     .carousel-img {
@@ -154,8 +152,10 @@
 
 .menu_header.img:hover {
     filter: brightness(0) saturate(100%) invert(16%) sepia(49%) saturate(693%) hue-rotate(349deg) brightness(92%) contrast(88%);
-    transform: translateY(-5px); /* Optional: Adds a slight lift effect */
-    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transform: translateY(-5px);
+    /* Optional: Adds a slight lift effect */
+    transition: filter 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
 }
 
 .cart_btn {
@@ -164,7 +164,7 @@
     color: whitesmoke;
     border-radius: 10px;
     font-size: 15px;
-    font-family: 'Headland One', serif; 
+    font-family: 'Headland One', serif;
     padding: 8px 30px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
@@ -179,7 +179,6 @@
 }
 
 
-
 /* about image design*/
 .aboutUsImage img {
     width: 600px;
@@ -187,7 +186,7 @@
     margin-bottom: 30px;
     border-radius: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    
+
 }
 
 .about_details {
@@ -205,18 +204,25 @@
     align-items: center;
 }
 
-.custom-card-width {
+.sec4 .custom-card-width {
     width: 60%;
     margin: 0 auto;
     border-radius: 15px;
+    border: black 1px solid;
+    min-width: 300px;
+}
+
+.sec4 .formBtn{
+    width: 100%;
 }
 
 /* Sign Up*/
 .form-control {
     border-radius: 10px;
-    font-family: 'Headland One', serif;
     font-size: 15px;
     height: 40px;
     color: black;
     margin-top: 20px;
 }
+
+.outer_input {}

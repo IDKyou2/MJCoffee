@@ -1,7 +1,6 @@
 /* Navbar */
 .color {
     border: none;
-    background-color: transparent;
     /*
     background-color: #664229; 
     */
@@ -10,17 +9,10 @@
 
 .nav {
     font-size: 25px;
-    font-family: 'Hepta Slab', serif;
     font-weight: bolder;
-    color: black;
     padding: 0;
 }
 
-.text {
-    font-family: 'Headland One', serif;
-    font-size: 17px;
-    color: black;
-}
 
 
 /* Basic style of the nav-link */
@@ -49,7 +41,7 @@
 
 .btn {
     border: none;
-    background-color: #9A4444;
+    background-color: #6B4226;
     color: white;
     border-radius: 10px;
     font-size: 15px;
