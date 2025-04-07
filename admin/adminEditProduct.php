@@ -1,5 +1,5 @@
 <?php
-require_once('../dbconn.php');
+require_once('../backend/dbconn.php');
 
 try {
     // Check if fooditemID is set in the URL

@@ -133,6 +133,8 @@
     font-family: 'Headland One', serif;
     font-size: 15px;
 }
+.card-body{
+}
 
 .card {
     overflow: hidden;
@@ -211,6 +213,10 @@
     border: black 1px solid;
     min-width: 300px;
 }
+.card.custom-card-width {
+    background-color: transparent;
+  }
+  
 
 .sec4 .formBtn{
     width: 100%;

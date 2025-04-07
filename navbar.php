@@ -142,7 +142,7 @@ session_start();
                         if (!isset($_SESSION['username'])) {
                             ?>
                             <a href="login.php" class="ml-2">
-                                <button type="button" class="btn" style="border-radius: 10px;">Log-in</button>
+                                <button type="button" class="btn" style="border-radius: 10px;">Login</button>
                             </a>
                         <?php } else { ?>
                             <div class="dropdown">

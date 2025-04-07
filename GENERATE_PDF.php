@@ -1,5 +1,5 @@
 <?php
-require_once('dbconn.php');
+require_once('backend/dbconn.php');
 require('./fpdf/fpdf.php');
 
 $orderID = isset($_GET['orderID']) ? $_GET['orderID'] : '';
@@ -13,7 +13,7 @@ $pdf->AddPage();
 
 $pdf->SetFont('Arial', 'B', 20); // Corrected font size format
 $pdf->Cell(71, 10, '', 0, 0);
-$pdf->Cell(50, 5, 'Receipt', 0, 0, 'C');
+$pdf->Cell(50, 5, 'Official Order Receipt', 0, 0, 'C');
 $pdf->Cell(59, 15, '', 0, 1);
 
 $pdf->SetFont('Arial', 'B', 15); // Corrected font size format

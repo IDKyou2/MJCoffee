@@ -14,15 +14,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
-  <link rel="stylesheet" href="../style/admindesignn.css">
-  <link rel="stylesheet" href="../style/tabledesign.css">
+  <link rel="stylesheet" href="../style/adminDesign.css">
+  <link rel="stylesheet" href="../style/adminTableDesign.css">
   <script defer src="active_link.js"></script>
 
 </head>
 
 <body>
   <?php
-  include('adminnavbar.php')
+  include('adminNavbar.php')
 
   ?>
   <br><br><br><br><br>
@@ -33,7 +33,7 @@
 
 
   <?php 
-  require('../dbconn.php');  
+  require('../backend/dbconn.php');  
 
   $stmt = $conn->prepare("SELECT COUNT(*) as count FROM customer");
   $stmt->execute();
@@ -53,7 +53,7 @@
       </div>
 
       <?php
-      require('../dbconn.php');
+      require('../backend/dbconn.php');
 
       $stmt = $conn->prepare("SELECT COUNT(*) as count FROM fooditem");
       $stmt->execute();
@@ -71,7 +71,7 @@
       </div>
 
       <?php
-      require('../dbconn.php');
+      require('../backend/dbconn.php');
 
       $stmt = $conn->prepare("SELECT COUNT(*) as count FROM ordersummary");
       $stmt->execute();
@@ -122,7 +122,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require_once('../dbconn.php');
+                                require_once('../backend/dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM customer");
                                   $stmt->execute();
@@ -188,7 +188,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require('../dbconn.php');
+                                require('../backend/dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM fooditem");
                                   $stmt->execute();
@@ -262,7 +262,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                require('../dbconn.php');
+                                require('../backend/dbconn.php');
                                 try {
                                   $stmt = $conn->prepare("SELECT * FROM ordersummary");
                                   $stmt->execute();

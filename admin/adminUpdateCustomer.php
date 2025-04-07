@@ -1,5 +1,5 @@
 <?php
-require_once('dbconn.php');
+require_once('../backend/dbconn.php');
 
 try {
     $sql = "UPDATE customer SET name = :newname, username = :newusername, address = :newaddress, role = :newrole, phonenumber = :newphonenumber WHERE customerID = :customerID";
@@ -17,7 +17,7 @@ try {
     $stmt->execute();
 
     // Redirect to the managecustomer.php page after the update
-    header('Location: managecustomer.php');
+    header('Location: adminManageCustomer.php');
 } catch (PDOException $e) {
     echo "ERROR: " . $e->getMessage();
 }

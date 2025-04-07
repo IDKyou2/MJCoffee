@@ -33,7 +33,7 @@ body {
 
 
 .loginBtn {
-    background-color:  #6B4226; 
+    background-color: #6B4226;
     color: white;
     width: 100%;
     height: 40px;
@@ -44,9 +44,20 @@ body {
 }
 
 .loginBtn:hover {
-    transform: scale(1.05);
-    background-color: #9A4444;
-    color: black;
+    /* --Slide Up Effect */
+    transform: translateY(-3px);
+    /* --Pop Out + Lift */
+    /* transform: scale(1.05) translateY(-2px);*/
+    /* --Rotate Slightly */
+    /* transform: rotate(-1deg) scale(1.05);*/
+    /* --Pulse/Pop Slightly Bigger */
+    /* transform: scale(1.1); */
+    /* ---Skew effect on hover--*/
+    /* transform: skewX(-5deg) scale(1.05); */
+
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    background-color: black;
+    color: white;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
 }
 
@@ -60,20 +71,32 @@ body {
     border: black 0px solid;
     background-color: transparent;
     border-radius: 20px;
-    display: flex;             /* Enables Flexbo
+    display: flex;
+    /* Enables Flexbo
     x */
-    justify-content: center;   /* Centers horizontally */
-    align-items: center;       /* Centers vertically */
-    height: 100%;          
-    background-color: transparent; /* Just for visibility */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    height: 100%;
+    background-color: transparent;
+    /* Just for visibility */
+}
+
+.loginContainer .nav {
+    color: black;
 }
 
 /* changes colors when form is focused*/
 .outer input:focus {
-    border-color: #6B4226; /* Change border color */
-    background-color: #f0f8ff; /* Light blue background */
-    outline: none; /* Remove default outline */
-    box-shadow: #6B4226; /* Add a glowing effect */
+    border-color: #6B4226;
+    /* Change border color */
+    background-color: #f0f8ff;
+    /* Light blue background */
+    outline: none;
+    /* Remove default outline */
+    box-shadow: #6B4226;
+    /* Add a glowing effect */
 }
 
 @media (min-width: 768px) {

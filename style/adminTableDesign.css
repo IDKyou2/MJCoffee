@@ -44,6 +44,11 @@ thead {
   margin-top: auto;
 }
 
+/* -------------------------------- Table caps -------------------------------- */
+.table .text-center {
+  text-transform: capitalize;
+}
+
 .receipt {
   padding: 7px 15px;
   margin-left: 5px;

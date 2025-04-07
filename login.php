@@ -63,7 +63,7 @@
                         <div class="text-center">
                             <p class="nav"
                                 style="display: inline-block; margin: 0; vertical-align: middle; font-size:28px;">
-                                Login your account</p>
+                                Login account </p>
                         </div>
                         <form action="customer_login.php" method="post">
                             <div class="outer">
@@ -74,6 +74,7 @@
                                 <input type="password" id="form2Example22" class="form-control" name="password"
                                     placeholder="Password" required />
                             </div>
+                            <!------------------------ Submit button ------------------------>
                             <div class="text-center pt-1 mb-2 mt-2 pb-1">
                                 <button class="loginBtn" type="submit" value="Login" name="login">Login</button>
                             </div>
@@ -81,7 +82,7 @@
                                 <p class="text-center" style="font-size:15px; margin-top:15px;">Don't have an account
                                     yet?&nbsp<a href="dashboard.php#sec4">Create an Account </a></p>
                             </div>
-                            
+
                         </form>
                     </div>
                 </div>

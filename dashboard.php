@@ -26,8 +26,10 @@
   require_once("navbar.php");
   ?>
   <br>
+
   <div class="container" style="margin-top: 30px;">
     <div class="row">
+      <!------------------------------------------------------------------- Carousel display Section ------------------------------------------------------------>
       <section class="sec1" id="sec1">
         <!-- Carousel wrapper -->
         <div id="carouselBasicExample" class="carousel slide carousel-fade carousel-width-adjust"
@@ -78,11 +80,12 @@
 
   </div><br>
 
+  <!------------------------------------------------------------------- Menu Section ------------------------------------------------------------>
   <section class="sec2" id="sec2">
     <div class="container">
       <div class="row">
         <div class="menu_header">
-          <p>Menu</p>
+          <p>Order menu</p>
           <div class="end_menu_header d-flex align-items-center">
             <p class="right">See more</p>
             <a href="index.php">
@@ -100,7 +103,7 @@
           ?>
       </div>
     </div>
-
+    <!------------------------------------------------------------------- Smoothies ------------------------------------------------------------>
     <div class="container">
       <div class="row">
         <div class="menu_header">
@@ -125,6 +128,7 @@
     </div>
   </section>
 
+  <!------------------------------------------------------------------- About Section ------------------------------------------------------------>
   <section class="sec3" id="sec3" style="padding-top: 20px;">
     <div class="container">
       <hr style=" border:1px solid black; margin-bottom: 50px;" ;>
@@ -158,7 +162,7 @@
     </div>
   </section>
 
-
+  <!------------------------------------------------------------------- Registration Section ------------------------------------------------------------>
   <section class="sec4" id="sec4">
     <br>
     <div class="container 
@@ -169,20 +173,19 @@
     } ?>">
       <hr style=" border:1px solid black;" ;>
       <div class="row">
-        <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center align-items-center">
             <div class="col-xl-10">
               <div class="card rounded-3 custom-card-width">
                 <!-- Sets the gap between columns and rows to 0  -->
                 <div class="row g-0">
                   <!-- On medium (md) screens and larger, the padding increases to 5, and horizontal margins increase to 4.-->
-                  <div class="card-body p-md-5 mx-md-4">
-
+                  <div class="card-body p-md-5">
                     <div class="text-center">
                       <img src="image/logo-nobg.png" style="width: 50px; display: inline-block; vertical-align: middle;"
                         alt="logo">
                       <p class="nav" style="display: inline-block; margin: 0; vertical-align: middle; font-size:28px;">
-                        MJCoffee</p>
+                        Register Account</p>
                     </div>
                     <br>
 
