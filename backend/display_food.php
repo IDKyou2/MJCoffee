@@ -10,7 +10,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="row">
         <?php foreach ($results as $row) { ?>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <form action="add_to_cart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
+                <form action="addToCart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
                     <input type="hidden" name="fooditemID" value="<?php echo $row['fooditemID']; ?>">
                     <div class="card h-100 card_style" style="border-radius: 20px;">
                         <div
@@ -29,7 +29,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="text-center">
                                 <?php if (isset($_SESSION['customerID'])) { ?>
                                     <?php if ($row['availability'] == 'available') { ?>
-                                        <button type="submit" name="Add_To_Cart_Search" class="cart_btn"
+                                        <button type="submit" name="addToCart_Search" class="cart_btn"
                                             style="border-radius: 10px;">
                                             Add to Cart
                                         </button>

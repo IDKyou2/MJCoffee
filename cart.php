@@ -66,12 +66,11 @@
                 <p class="mb-0 header_p">Shopping Cart</p>
             </div>
             <div class="col-12 col-md-6 text-md-end text-center mt-2 mt-md-0">
-
                 <form id="clearCartForm" action="clear_cart.php" method="post">
                     <input type="hidden" name="customerID"
                         value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
-                    <button type="button" onclick="confirmClearCart()" class="btn btn-danger header_btn">Delete
-                        All</button>
+                    <button type="button" onclick="confirmClearCart()" class="header_btn">Delete
+                        All</button><br>
                 </form>
 
                 <script>
@@ -97,7 +96,7 @@
     <div class="container">
         <div class="table-responsive">
             <div class="row">
-                <table class="table align-middle mb-1 bg-white table_design">
+                <table class="table align-middle mb-1 bg-white tableDesign">
                     <thead>
                         <tr>
                             <th>Product</th>
@@ -116,7 +115,7 @@
                         <?php } else { ?>
                             <?php foreach ($items as $item) { ?>
                                 <tr class="custom-border gap">
-                                    <td style="border-left: 1.5px solid black; width: 100px; margin: 0; padding: 0;">
+                                    <td style="width: 100px; margin: 0; padding: 0;">
                                         <div class="d-flex align-items-center">
                                             <img src='data:image/jpeg;base64,<?php echo base64_encode($item['menuprofile']) ?>'
                                                 alt="menu" style="width: 280px; height: 280px;" />
@@ -157,7 +156,7 @@
                                             unset($_SESSION['update_success']);
                                         endif;
                                         ?>
-                                        <td style="border-right: 1.5px solid black;">
+                                        <td>
                                             <!------------------------------- Update button -------------------------------->
                                             <button type="submit" class="updateBtn"><i class=""></i> Update Cart</button>
                                             <!------------------------------- Delete button -------------------------------->
@@ -232,7 +231,7 @@
             </div>
             <div class="col-12 text-center text-md-right col-md-2 pad">
                 <form id="checkoutForm" action="check_out.php" method="post">
-                    <button type="button" onclick="confirmCheckout()" class="btn_check">Check Out</button>
+                    <button type="button" onclick="confirmCheckout()" class="btn_check">Proceed to checkout</button>
                 </form>
             </div>
         </div>

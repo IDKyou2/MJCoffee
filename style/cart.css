@@ -24,20 +24,20 @@
 
 /*table cart menu*/
 
-.table_design {
+.tableDesign {
     border-collapse: separate;
     border-spacing: 0 20px;
 }
 
-.table_design th {
-    border: none !important;
+.tableDesign th {
+ 
     font-family: 'Headland One', serif;
     font-size: 17px;
     font-weight: bolder !important;
 }
 
-.table_design th,
-.table_design td {
+.tableDesign th,
+.tableDesign td {
     text-align: center;
     vertical-align: middle;
 }
@@ -47,33 +47,29 @@
     padding: 0;
 }
 
-.table_design .d-flex {
+.tableDesign .d-flex {
     justify-content: start;
 }
 
-.table_design img {
+.tableDesign img {
     display: block;
     margin: 0;
 }
 
-.table_design {
+.tableDesign {
     min-width: 1000px;
 }
 
-.table_design td {
-    border-top: 1.5px solid black;
-    border-bottom: 1.5px solid black;
-    border-left: none;
-    border-right: none;
+.tableDesign td {
     padding: 0;
 }
 
-.table_design tr:first-child td {
-    border-top: 1.5px solid black;
+.tableDesign tr:first-child td {
+    
 }
 
-.table_design tr:last-child td {
-    border-bottom: 1.5px solid black;
+.tableDesign tr:last-child td {
+   
 }
 
 .custom-border {
@@ -130,15 +126,11 @@ a:hover{
 
 /*check out area*/
 .btn_check {
-    border: none;
     border-radius: 10px;
     width: 100%;
-    max-width: 130px;
-    height: 40px;
-    background-color: rgb(238, 115, 76);
+    height: 100%;
+    background-color: #6B4226;
     color: white;
-    font-family: 'Headland One', serif;
-    margin: 10px auto;
 }
 
 .check_text {

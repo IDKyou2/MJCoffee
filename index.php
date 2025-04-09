@@ -195,9 +195,7 @@
     </script>
 
 
-
-
-
+    <!---------------- This feature prevents pop-ups upon reloading the page. ------------------>
     <?php if (isset($_GET['added']) && $_GET['added'] == 1): {
         unset($_SESSION['added']);
     } ?>
