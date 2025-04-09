@@ -43,9 +43,8 @@
                 <div class="d-flex flex-column flex-md-row justify-content-between mt-3">
                     <div class="btn-group mb-2 mb-md-0" style="box-shadow: none;">
                         <div class="dropdown">
-                            <button class="btn_categ dropdown-toggle" style="border-radius: 10px;" type="button"
-                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <button class="categoryBtn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Coffees
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -54,15 +53,16 @@
                                 <a class="dropdown-item" href="?category=iced coffee">Iced coffee</a>
                             </div>
                         </div>
-                        <button class="btn_categ" style="border-radius: 10px;"
-                            onclick="location.href='?category=Drinks';">
+                        <button class="categoryBtn" onclick="location.href='?category=Drinks';">
                             Smoothies
                         </button>
+
                     </div>
                     <!------------------------------------------------- Search button ---------------------------------------------->
                     <div class="d-flex align-items-center search mb-2 mb-md-0">
                         <form action="" method="GET" class="d-flex align-items-center">
-                            <input type="text" name="searchItem" class="form-control mr-2" placeholder="Search">
+                            <input type="text" name="searchItem" class="form-control mr-2"
+                                placeholder="Search product here">
                             <button type="submit" class="btn_display">
                                 <img src="image/search.svg" alt="Search" width="30" height="30">
                             </button>
@@ -109,7 +109,7 @@
                 foreach ($results as $row) {
                     ?>
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
-                        <form action="add_to_cart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
+                        <form action="addToCart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
                             <input type="hidden" name="fooditemID" value="<?php echo $row['fooditemID']; ?>">
                             <div class="card h-100 card_style" style="border: none;">
                                 <div class="not-available bg-danger text-light rounded shadow <?php if ($row['availability'] == 'available')
@@ -126,25 +126,35 @@
                                         <?php echo $row['menuprice']; ?>
                                     </p>
                                     <div class="text-center">
-                                        <?php if (isset($_SESSION['customerID'])) { ?>
-                                            <?php if ($row['availability'] == 'available') { ?>
-                                                <button type="submit" name="Add_To_Cart_Search" class="cart_btn"
-                                                    style="border-radius: 10px;">
-                                                    Add to Cart
+                                        <?php
+                                        $isLoggedIn = isset($_SESSION['customerID']);
+                                        $isAvailable = ($row['availability'] === 'available');
+                                        $buttonClass = $isAvailable ? 'addToCartBtn' : 'disabledBtn';
+                                        $buttonText = $isAvailable ? 'Add to Cart' : 'Unavailable';
+
+                                        if ($isLoggedIn) {
+                                            if ($isAvailable) {
+                                                // User is logged in and item is available
+                                                ?>
+                                                <button type="submit" name="addToCart" class="<?= $buttonClass ?>">
+                                                    <?= $buttonText ?>
                                                 </button>
-                                            <?php } else { ?>
-                                                <button type="button" onclick="itemUnavailable()" class="cart_btn btn-danger"
-                                                    style="border-radius: 10px;">
-                                                    Unavailable
+                                            <?php } else {
+                                                // User is logged in but item is not available
+                                                ?>
+                                                <button type="button" onclick="itemUnavailable()" class="<?= $buttonClass ?>">
+                                                    <?= $buttonText ?>
                                                 </button>
-                                            <?php } ?>
-                                        <?php } else { ?>
-                                            <button type="button" onclick="promptLogin()" class="cart_btn <?php if ($row['availability'] != 'available')
-                                                echo 'btn-danger'; ?>" style="border-radius: 10px;">
-                                                Add to Cart
+                                            <?php }
+                                        } else {
+                                            // User is not logged in
+                                            ?>
+                                            <button type="button" onclick="promptLogin()" class="<?= $buttonClass ?>">
+                                                <?= $buttonText ?>
                                             </button>
                                         <?php } ?>
                                     </div>
+
                                 </div>
                             </div>
                         </form>
@@ -185,10 +195,12 @@
     </script>
 
 
-    <?php
-    if (isset($_SESSION['itemAdded']) && $_SESSION['itemAdded']) {
-        unset($_SESSION['itemAdded']);
-        ?>
+
+
+
+    <?php if (isset($_GET['added']) && $_GET['added'] == 1): {
+        unset($_SESSION['added']);
+    } ?>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 Swal.fire({
@@ -197,16 +209,20 @@
                     text: 'Your item has been added to the cart.',
                     showConfirmButton: true,
                     confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Remove `added=1` from the URL without refreshing
+                        const url = new URL(window.location.href);
+                        url.searchParams.delete('added');
+                        window.history.replaceState({}, document.title, url);
+                    }
                 });
             });
         </script>
-        <?php
-    }
-    ?>
+    <?php endif; ?>
 
-    <?php
-    include("footer.php")
-        ?>
+
+
 
 </body>
 

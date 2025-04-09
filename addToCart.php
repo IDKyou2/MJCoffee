@@ -25,10 +25,11 @@ if (isset($_POST['fooditemID'])) {
         $updateStmt->bindParam(':quantity', $quantity);
         $updateStmt->bindParam(':customerID', $customerID);
         $updateStmt->bindParam(':fooditemID', $fooditemID);
+
         if ($updateStmt->execute()) {
             $_SESSION['itemUpdated'] = true;
             $redirectURL = isset($_GET['redirect']) ? $_GET['redirect'] : 'index.php';
-            header('Location: ' . $redirectURL);
+            header('Location: ' . $redirectURL . '?added=1');
             exit();
         } else {
             echo "Error: Could not update cart.";
@@ -42,27 +43,21 @@ if (isset($_POST['fooditemID'])) {
         $stmt->bindParam(':fooditemID', $fooditemID);
 
         if ($stmt->execute()) {
-            $_SESSION['itemAdded'] = true;
+            $_SESSION['added'] = true;
             $redirectURL = isset($_GET['redirect']) ? $_GET['redirect'] : 'index.php';
-            header('Location: ' . $redirectURL);
+            header('Location: ' . $redirectURL . '?added=1');
             exit();
         } else {
             echo "Error: Could not add to cart.";
         }
     }
 } else {
-    die("Error: Food item not specified.");
+    die("Error: Item not specified.");
 }
 
 ?>
 
-
-/* ---------------------------------------------------- COMMMMMMMMMMMMEEEEEEEEEEEEEEENTED --------------------------------------------------------------------
 <?php
-
-session_start();
-require_once('backend/dbconn.php');
-
 if (!isset($_SESSION['customerID'])) {
     header('Location: login.php');
     exit();
@@ -81,9 +76,9 @@ if (isset($_POST['fooditemID'])) {
     $stmt->bindParam(':fooditemID', $fooditemID);
 
     if ($stmt->execute()) {
-        $_SESSION['itemAdded'] = true;
+        $_SESSION['added'] = true;
         $redirectURL = isset($_GET['redirect']) ? $_GET['redirect'] : 'index.php';
-        header('Location: ' . $redirectURL);
+        header('Location: ' . $redirectURL . '?added=1');
         exit();
     } else {
         echo "Error: Could not add to cart.";
@@ -92,4 +87,3 @@ if (isset($_POST['fooditemID'])) {
     die("Error: Food item not specified.");
 }
 ?>
-*/ ---------------------------------------------------- EEEEEEEEEEEEEEEEND LINE --------------------------------------------------------------------

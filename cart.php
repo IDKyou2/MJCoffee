@@ -7,9 +7,14 @@
     <title>Backstage Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link rel="Icon" href="image/navimg.png" type="image/x-icon">
     <link rel="stylesheet" href="style/cart.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -18,7 +23,7 @@
 
 <body>
     <?php
-    include("navbar.php")
+    require_once("navbar.php");
     ?>
     <br><br><br><br>
 
@@ -63,8 +68,10 @@
             <div class="col-12 col-md-6 text-md-end text-center mt-2 mt-md-0">
 
                 <form id="clearCartForm" action="clear_cart.php" method="post">
-                    <input type="hidden" name="customerID" value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
-                    <button type="button" onclick="confirmClearCart()" class="btn btn-danger header_btn">Delete All</button>
+                    <input type="hidden" name="customerID"
+                        value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
+                    <button type="button" onclick="confirmClearCart()" class="btn btn-danger header_btn">Delete
+                        All</button>
                 </form>
 
                 <script>
@@ -111,7 +118,8 @@
                                 <tr class="custom-border gap">
                                     <td style="border-left: 1.5px solid black; width: 100px; margin: 0; padding: 0;">
                                         <div class="d-flex align-items-center">
-                                            <img src='data:image/jpeg;base64,<?php echo base64_encode($item['menuprofile']) ?>' alt="menu" style="width: 280px; height: 280px;" />
+                                            <img src='data:image/jpeg;base64,<?php echo base64_encode($item['menuprofile']) ?>'
+                                                alt="menu" style="width: 280px; height: 280px;" />
                                         </div>
                                     </td>
                                     <td>
@@ -120,18 +128,23 @@
                                     <td>
                                         <p class="fw-normal mb-1"> ₱ <?php echo $item['menuprice']; ?></p>
                                     </td>
-                                    <form action="update_cart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']) ?>" method="POST">
+                                    <form action="update_cart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']) ?>"
+                                        method="POST">
                                         <td>
-                                            <input type="hidden" name="fooditemID" value="<?php echo isset($item['fooditemID']) ? $item['fooditemID'] : ''; ?>">
+                                            <input type="hidden" name="fooditemID"
+                                                value="<?php echo isset($item['fooditemID']) ? $item['fooditemID'] : ''; ?>">
 
-                                            <input type="hidden" name="customerID" value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
+                                            <input type="hidden" name="customerID"
+                                                value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
 
-                                            <input class="quan_input" type="number" name="quantity" style="width: 70px; border-radius: 10px; text-align: center;" min="1" max="50" value="<?php echo $item['quantity']; ?>">
+                                            <input class="quan_input" type="number" name="quantity"
+                                                style="width: 70px; border-radius: 10px; text-align: center;" min="1" max="50"
+                                                value="<?php echo $item['quantity']; ?>">
                                         </td>
                                         <td>
                                             <p class="fw-normal mb-1"><?php echo $item['menuprice'] * $item['quantity']; ?> </p>
                                         </td>
-                                        <?php if (isset($_SESSION['update_success']) && $_SESSION['update_success'] == true) : ?>
+                                        <?php if (isset($_SESSION['update_success']) && $_SESSION['update_success'] == true): ?>
                                             <script>
                                                 Swal.fire({
                                                     icon: 'success',
@@ -139,14 +152,17 @@
                                                     text: 'Quantity updated successfully.'
                                                 });
                                             </script>
-                                        <?php
+                                            <?php
                                             // Unset the session variable after displaying the alert
                                             unset($_SESSION['update_success']);
                                         endif;
                                         ?>
                                         <td style="border-right: 1.5px solid black;">
-                                            <button type="submit" class="btn_edit"><i class="bi bi-pen"></i> Update</button>
-                                            <a href="remove_cart.php?fooditemID=<?php echo $item['fooditemID']; ?>&customerID=<?php echo $customerID; ?>&quantity=<?php echo $item['quantity']; ?>" class="btn_delete"><i class="bi bi-trash"></i> Delete</a>
+                                            <!------------------------------- Update button -------------------------------->
+                                            <button type="submit" class="updateBtn"><i class=""></i> Update Cart</button>
+                                            <!------------------------------- Delete button -------------------------------->
+                                            <a href="remove_cart.php?fooditemID=<?php echo $item['fooditemID']; ?>&customerID=<?php echo $customerID; ?>&quantity=<?php echo $item['quantity']; ?>"
+                                                class="deleteBtn"><i class="bi bi-trash"></i> Delete</a>
                                         </td>
                                     </form>
                                 </tr>
@@ -242,22 +258,19 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'error') : ?>
+        document.addEventListener("DOMContentLoaded", function () {
+            <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'error'): ?>
                 Swal.fire('Error', '<?php echo $_SESSION['checkout_message']; ?>', 'error');
-            <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
+                <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
             endif; ?>
 
-            <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'success') : ?>
+            <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'success'): ?>
                 Swal.fire('Success', '<?php echo $_SESSION['checkout_message']; ?>', 'success');
-            <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
+                <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
             endif; ?>
         });
     </script>
     <br><br>
-    <?php
-    include("footer.php")
-    ?>
 </body>
 
 </html>

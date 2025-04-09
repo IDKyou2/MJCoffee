@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             if ($get_user['role'] == 'admin') {
                 $_SESSION['redirect'] = "admin/adminHome.php";
             } else if ($get_user['role'] == 'customer') {
-                $_SESSION['redirect'] = "ddashboard.php";
+                $_SESSION['redirect'] = "index.php";
             } else {
                 $_SESSION['redirect'] = "login.php";
             }

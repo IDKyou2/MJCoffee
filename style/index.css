@@ -18,7 +18,7 @@
     color: white;
 }
 
-.btn_categ {
+.categoryBtn {
     border-radius: 10px;
     width: 130px;
     height: 40px;
@@ -31,14 +31,14 @@
     font-family: 'Hepta Slab', serif;
 }
 
+/* ----------------------------------- Search bar ----------------------------*/
 .search input {
     width: 300px;
     border-radius: 10px;
-    border-color: black;
-    border: 1.8px solid;
+    border: 1px solid #9A4444;
     text-align: center;
     font-family: 'Headland One', serif;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .btn_display {
@@ -92,18 +92,34 @@
     /* Zooms in the image by 10% */
 }
 
-.cart_btn {
+/* ----------------------------------- Add to cart button ----------------------------*/
+.addToCartBtn {
     border: none;
     background-color: #9A4444;
     color: white;
     border-radius: 10px;
     font-size: 15px;
-    font-family: 'Headland One', serif;
+    /* font-family: 'Headland One', serif; */
     text-transform: capitalize;
     padding: 8px 30px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
     cursor: pointer;
+}
+
+/* ----------------------------------- Disabled button ----------------------------*/
+.disabledBtn {
+    pointer-events: none;
+    /*  cursor: not-allowed !important;  */
+    background-color: transparent;
+    border: #9A4444 solid 1px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 8px 30px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .cart_btn:hover {
