@@ -2,7 +2,7 @@
    $servername = "localhost";
    $username = "root";
    $password = "";
-   $dbname = "ministore_db";
+   $dbname = "mjcoffee_db";
 
 
    try {

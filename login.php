@@ -32,19 +32,20 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     icon: '$type',
-                    title: '<strong>$message</strong>',
-                    showCloseButton: true, 
-                    focusConfirm: false, 
+                    title: '$message',              
+                    focusConfirm: true, 
                     confirmButtonText: 'Continue', 
                     confirmButtonAriaLabel: 'Thumbs up, great!',
+                     allowOutsideClick: false,       // 🔒 prevent click outside
+                     allowEscapeKey: true,          // 
                     customClass: {
-                        confirmButton: 'btn btn-success',
-                        cancelButton: 'btn btn-danger'
+                        confirmButton: 'loginBtn',
                     },
-                    timer: 2000
+                    buttonsStyling: false, // Disable default SweetAlert2 styling
                 }).then(function() {
                     window.location.href = '$redirect';
                 });
+                
             });
           </script>";
 
@@ -59,10 +60,9 @@
         <div class="container loginContainer">
             <div class="row">
                 <div class="col-xl-10">
-                    <div class="card-body p-md-5 mx-md-4 custom-card-width loginCard">
+                    <div class="card-body p-md-5 mx-md-4 loginCard">
                         <div class="text-center">
-                            <p class="nav"
-                                style="display: inline-block; margin: 0; vertical-align: middle; font-size:28px;">
+                            <p class="nav cardHeader">
                                 Login account </p>
                         </div>
                         <form action="customer_login.php" method="post">

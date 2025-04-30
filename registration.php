@@ -69,7 +69,7 @@ $conn = null;
         <?php foreach ($errors as $error) : ?>
             <script>
                 alert('<?php echo $error; ?>');
-                window.location.href = 'ddashboard.php#sec4'
+                window.location.href = 'dashboard.php#sec4'
             </script>
         <?php endforeach; ?>
     </div>

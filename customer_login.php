@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         if ($password == $get_user['password']) {
             $_SESSION['username'] = $get_user['username'];
             $_SESSION['customerID'] = $get_user['customerID'];
-            $_SESSION['alertMessage'] = "Login successful";
+            $_SESSION['alertMessage'] = "Login successful!";
             $_SESSION['alertType'] = "success";
 
             // Check the role of the user and set the redirect session variable

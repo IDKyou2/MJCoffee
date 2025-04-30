@@ -40,6 +40,25 @@
     transition: left 0.3s, right 0.3s;
 }
 
+.sweetAlertConfirmBtn {
+    background-color: #6B4226;
+    color: white;
+    width: 100%;    
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+
+}
+.sweetAlertCancelBtn {
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #6B4226;
+    border-radius: 10px;
+}
+
 .btn {
     border: none;
     background-color: #6B4226;
@@ -49,6 +68,12 @@
     font-family: 'Headland One', serif;
     text-transform: capitalize;
     padding: 8px 30px;
+}
+
+.btn:hover {
+
+    background-color: white;
+    border: 2px solid #6B4226;
 }
 
 .basket-container {
@@ -92,5 +117,5 @@
 
 .navbar-nav .nav-link:hover {
     color: #6B4226 !important;
-   
+
 }

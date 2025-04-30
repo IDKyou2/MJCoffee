@@ -170,11 +170,17 @@
         function promptLogin() {
             Swal.fire({
                 icon: 'warning',
-                title: 'Sorry',
-                text: 'You need to login first!',
-                showCancelButton: true,
+                title: "Sorry, I don't recognize you.",
+                text: 'You need to login first.',
                 confirmButtonText: 'Login',
-                cancelButtonText: 'Cancel'
+                cancelButtonText: 'Cancel',
+                customClass: {
+                    confirmButton: 'sweetAlertConfirmBtn',
+                    cancelButton: 'sweetAlertCancelBtn'
+                },
+                showCancelButton: true,
+                buttonsStyling: false, // Disable default SweetAlert2 styling
+
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = "login.php";

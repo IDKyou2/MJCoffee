@@ -40,11 +40,11 @@ session_start();
                                 <a class="nav-link" aria-current="page" id="homeLink" href="dashboard.php#sec1">Home</a>
                             </li>
                             <li class="nav-item text">
-                                <a class="nav-link" aria-current="page" id="beverageLink" href="index.php">Menu</a>
-                            </li>
-                            <li class="nav-item text">
                                 <a class="nav-link" aria-current="page" id="searchLink"
                                     href="dashboard.php#sec3">About</a>
+                            </li>
+                            <li class="nav-item text">
+                                <a class="nav-link" aria-current="page" id="beverageLink" href="index.php">Menu</a>
                             </li>
                         </ul>
 
@@ -172,11 +172,19 @@ session_start();
         <?php if (!isset($_SESSION['username'])) { ?>
             Swal.fire({
                 icon: 'error',
-                title: 'Ooops!',
-                text: 'Please log in first.',
-                confirmButtonText: 'Login',
+                title: "Ooops! Do I know you?",
+                text: "Cannot view your cart. Please log in first.",
+                confirmButtonText: 'Login account',
+                cancelButtonText: 'Cancel',
+                customClass: {
+                    confirmButton: 'sweetAlertConfirmBtn',
+                    cancelButton: 'sweetAlertCancelBtn'
+                },
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                allowOutsideClick: false,       // 🔒 prevent click outside
+                allowEscapeKey: true,          // 
+                buttonsStyling: false, // Disable default SweetAlert2 styling
                 showCancelButton: true,
-                cancelButtonText: 'Cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
                     location.href = 'login.php';

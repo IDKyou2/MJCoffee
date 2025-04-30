@@ -192,7 +192,22 @@
                     <form action="registration.php" method="post">
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="username"
-                          placeholder="Username" required style="border: black 1px solid; " />
+                          placeholder="Username" required style="border: black 1px solid;" />
+            
+                        <style>
+                          /* Custom CSS for smooth transitions */
+                          .hover-opacity-100:hover {
+                            opacity: 1 !important;
+                          }
+
+                          .focus-opacity-100:focus-within {
+                            opacity: 1 !important;
+                          }
+
+                          .transition {
+                            transition: opacity 0.2s ease;
+                          }
+                        </style>
                       </div>
 
                       <div class="outer_input">
@@ -207,6 +222,7 @@
 
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="phonenumber" maxlength="11"
+                          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                           placeholder="Phone Number Ex. 09254789621" style="border: black 1px solid;" required />
                       </div>
 
