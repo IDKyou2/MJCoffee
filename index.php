@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" />
     <link rel="Icon" href="image/navimg.png" type="image/x-icon">
     <link rel="stylesheet" href="style/index.css">
+     <!-- Not available label css -->
     <link rel="stylesheet" href="style/not-availablee.css">
 
     <!-- Include the Swal library -->
@@ -112,7 +113,7 @@
                         <form action="addToCart.php?redirect=<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST">
                             <input type="hidden" name="fooditemID" value="<?php echo $row['fooditemID']; ?>">
                             <div class="card h-100 card_style" style="border: none;">
-                                <div class="not-available bg-danger text-light rounded shadow <?php if ($row['availability'] == 'available')
+                                <div class="not-available <?php if ($row['availability'] == 'available')
                                     echo 'd-none'; ?>">
                                     Not Available
                                 </div>
