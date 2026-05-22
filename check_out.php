@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Insert into OrderSummary table
     $stmt = $conn->prepare("
-    INSERT INTO OrderSummary (orderDate, customerID, totalPrice, status, pickup_at) VALUES (NOW(), :customerID, :totalPrice, 'on progress', TIMESTAMPADD(HOUR, 2, NOW()))");
+    INSERT INTO OrderSummary (orderDate, customerID, totalPrice, status, pickup_at) VALUES (NOW(), :customerID, :totalPrice, 'in progress', TIMESTAMPADD(HOUR, 2, NOW()))");
     $stmt->bindParam(':customerID', $customerID);
     $stmt->bindParam(':totalPrice', $overallTotalPrice, PDO::PARAM_STR);
     $stmt->execute();

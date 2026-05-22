@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backstage Cafe</title>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
@@ -27,6 +27,7 @@
 
     <?php
     require_once('backend/dbconn.php');
+
     if (!$_SESSION['customerID']) {
         // Handle the error or redirect to the login page
         exit("User not logged in.");
@@ -51,7 +52,8 @@
                         <thead class="bg-light">
                             <thead>
                                 <tr>
-                                    <th class="text-center align-middle">Order Date</th>
+                                    <th class="text-center align-middle">Date</th>
+                                    <th class="text-center align-middle">Order</th>
                                     <th class="text-center align-middle">Order Total</th>
                                     <th class="text-center align-middle">Status</th>
                                     <th class="text-center align-middle">Actions</th>
@@ -61,14 +63,20 @@
                             <?php foreach ($orders as $order) : ?>
                                 <tr>
                                     <td class="text-center align-middle"><?php echo $order['orderdate']; ?></td>
+                                    
+                                    <!-- if not available, show this instead  -->
+                                    <td class="text-center align-middle">
+                                        <?php echo $order['orderID'] ?? 'Not available'; ?>
+                                    </td>
+
                                     <td class="text-center align-middle"><?php echo number_format($order['totalprice'], 2); ?></td>
                                     <td class="text-center align-middle"><?php echo $order['status']; ?></td>
                                     <td class="text-center align-middle">
-                                        <a href="Orderdetails.php?orderID=<?php echo $order['orderID']; ?>&customerID=<?php echo $customerID; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <a href="Orderdetails.php?orderID=<?php echo $order['orderID']; ?>&customerID=<?php echo $customerID; ?>">See details 
+                                            <!-- <svg xmlns="" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                 <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                 <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                                            </svg>
+                                            </svg> -->
                                         </a>
                                     </td>
                                 </tr>

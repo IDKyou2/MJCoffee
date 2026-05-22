@@ -72,9 +72,9 @@
                                     <td class="text-center"> <?php echo $row['role']; ?></td>
                                     <td class="text-center"> <?php echo $row['address']; ?></td>
                                     <td class="text-center">
-                                      <a href="adminEditCustomer.php?customerID=<?php echo $row['customerID']; ?>">
-                                        <i class="bi bi-pencil-square" style="font-size: 24px; color:#701198;"></i>
-                                      </a>
+                                      <text> Edit </text><a href="adminEditCustomer.php?customerID=<?php echo $row['customerID']; ?>">
+                                        <i class="bi bi-pencil-square" style="font-size: 20px; color:brown"></i></a>
+                                 
                                     </td>
                                   </tr>
                                   <?php

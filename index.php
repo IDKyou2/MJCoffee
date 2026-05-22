@@ -46,17 +46,19 @@
                         <div class="dropdown">
                             <button class="categoryBtn dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Coffees
+                                Menu
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="?category=all">All Menu</a>
+                                <a class="dropdown-item" href="?category=all">Display All Menu</a>
                                 <a class="dropdown-item" href="?category=hot coffee">Hot coffee</a>
                                 <a class="dropdown-item" href="?category=iced coffee">Iced coffee</a>
+                                <a class="dropdown-item" href="?category=frappes">Frappes</a>
                             </div>
                         </div>
-                        <button class="categoryBtn" onclick="location.href='?category=Drinks';">
+
+                        <!-- <button class="categoryBtn" onclick="location.href='?category=Drinks';">
                             Smoothies
-                        </button>
+                        </button> -->
 
                     </div>
                     <!------------------------------------------------- Search button ---------------------------------------------->
@@ -76,7 +78,9 @@
     </div><br><br>
 
     <?php
+    //call database connection
     require_once('backend/dbconn.php');
+
 
     $category = $_GET['category'] ?? null;
     $searchItem = $_GET['searchItem'] ?? null;

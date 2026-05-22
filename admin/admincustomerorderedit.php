@@ -109,10 +109,13 @@ include('adminUpdateOrderStatus.php')
                                 <span>
                                     <a class="receipt"
                                         href="../GENERATE_PDF.php?orderID=<?php echo $row['orderID']; ?>&customerName=<?php echo $row['name']; ?>&orderDate=<?php echo $row['pickup_at']; ?>"
-                                        style="background-color: transparent; color: black; border: 2px solid #9A4444;" target="_blank">View</a>
+                                        style="background-color: transparent; color: black; border: 2px solid #9A4444;"
+                                        target="_blank">View</a>
+
                                     <button class="receipt" id="printButton_<?php echo $row['orderID']; ?>"
-                                        onclick="printPDF(<?php echo $row['orderID']; ?>)"
+                                        onclick="printPDF(<?php echo $row['orderID']; ?>, '<?php echo urlencode($row['name']); ?>', '<?php echo urlencode($row['pickup_at']); ?>')"
                                         style="background-color:#9A4444;">Print</button>
+
                                 </span>
                                 <p class="card-text" style="font-family: Times New Roman, Times, serif; font-size: 22px;">
                                     Order ID: <strong><?php echo $row['orderID']; ?></strong></p>
@@ -220,10 +223,12 @@ include('adminUpdateOrderStatus.php')
     </div><br><br><br>
 </body>
 <script>
-    function printPDF(orderID) {
+    function printPDF(orderID, customerName, orderDate) {
         // Create an anchor element to trigger the download
         var downloadLink = document.createElement('a');
-        downloadLink.href = '../GENERATE_PDF.php?orderID=' + orderID;
+        downloadLink.href = '../GENERATE_PDF.php?orderID=' + orderID +
+            '&customerName=' + customerName +
+            '&orderDate=' + orderDate;
         downloadLink.target = '_blank';
         downloadLink.download = 'backstage.pdf'; // Use the specified filename
 

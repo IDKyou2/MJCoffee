@@ -11,17 +11,33 @@ $role = "customer";
 
 $errors = array();
 
+
+// session to save input values after submit
+session_start();
+$_SESSION['signup_input'] = [
+    'username' => $username,
+    'name' => $name,
+    'address' => $address,
+    'phonenumber' => $phonenumber
+];
+
+
+
+
+
+
+
 if (strlen($password) < 8) {
     $errors[] = "Password must be at least 9 characters long.";
 }
 
-if (!preg_match('/[A-Z]/', $password)) {
-    $errors[] = "Password must contain at least 1 uppercase letter.";
-}
+// if (!preg_match('/[A-Z]/', $password)) {
+//     $errors[] = "Password must contain at least 1 uppercase letter.";
+// }
 
-if (!preg_match('/[0-9]/', $password) || !preg_match('/[^a-zA-Z0-9]/', $password)) {
-    $errors[] = "Password must contain at least 1 alphanumeric character and 1 special character.";
-}
+// if (!preg_match('/[0-9]/', $password) || !preg_match('/[^a-zA-Z0-9]/', $password)) {
+//     $errors[] = "Password must contain at least 1 alphanumeric character and 1 special character.";
+// }
 
 if ($password !== $confirmpassword) {
     $errors[] = "Password and confirm password fields do not match.";

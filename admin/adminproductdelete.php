@@ -1,5 +1,5 @@
 <?php
-require_once('../dbconn.php');
+require_once('../backend/dbconn.php');
 
 try {
     $sql = "DELETE FROM fooditem WHERE fooditemID = :fooditemID";

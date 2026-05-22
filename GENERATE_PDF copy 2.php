@@ -26,22 +26,14 @@ $pdf->Cell(130, 5, 'P. Sobrecarey St, Obrero, Davao City, Davao del Sur', 0, 0);
 $pdf->Cell(25, 5, 'Name:', 0, 0);
 $pdf->Cell(59, 5, $customerName, 0, 1);
 
-/*
 $pdf->SetFont('Arial', '', 10); // Corrected font size format
 $pdf->Cell(130, 5, 'City, 8000', 0, 0);
 $pdf->Cell(25, 5, 'Order ID:', 0, 0);
 $pdf->Cell(59, 5, $orderID, 0, 1);
-*/
-
-$pdf->SetFont('Arial', '', 10);
-$pdf->Cell(130, 5, 'City, 8000', 0, 1);
-
 
 $pdf->Cell(130, 5, '', 0, 0);
 $pdf->Cell(25, 5, 'Date:', 0, 0);
-//$pdf->Cell(59, 5, date("F j, Y", strtotime($orderDate)) . ', ' . date("g:i A", strtotime($orderDate)), 0, 1);
-$pdf->Cell(25, 5, date("m/d/y", strtotime($orderDate)) . ', ' . date("g:i A", strtotime($orderDate)), 0, 1);
-
+$pdf->Cell(59, 5, date("F j, Y", strtotime($orderDate)) . ', ' . date("g:i A", strtotime($orderDate)), 0, 1);
 
 $pdf->SetFont('Arial', 'B', 15);
 $pdf->Cell(130, 5, 'Items', 0, 0);

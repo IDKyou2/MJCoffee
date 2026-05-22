@@ -29,7 +29,7 @@
                         <a class="nav-link" aria-current="page" id="managecustomerLink" href="adminManageCustomer.php">Manage Customer</a>
                     </li>
                     <li class="nav-item" style="margin-right: 100px;">
-                        <a class="nav-link" aria-current="page" id="searchLink" href="adminCustomerOrder.php">Order History/Details</a>
+                        <a class="nav-link" aria-current="page" id="searchLink" href="adminCustomerOrder.php">Order History Details </a>
                     </li>
                     <li class="nav-item">
                         <div class="d-flex align-items-center ms-auto me-4">

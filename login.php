@@ -78,10 +78,10 @@
                             <div class="text-center pt-1 mb-2 mt-2 pb-1">
                                 <button class="loginBtn" type="submit" value="Login" name="login">Login</button>
                             </div>
-                            <div class="createAccount">
-                                <p class="text-center" style="font-size:15px; margin-top:15px;">Don't have an account
-                                    yet?&nbsp<a href="dashboard.php#sec4">Create an Account </a></p>
-                            </div>
+                        <div class="createAccount">
+                            <p class="text-center" style="font-size:15px; color: black; margin-top:15px;">Don't have an account
+                                yet?&nbsp<a href="dashboard.php#sec4" style="color: black; text-decoration: underline">Create an Account </a></p>
+                        </div>
 
                         </form>
                     </div>

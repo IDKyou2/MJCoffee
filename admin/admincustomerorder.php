@@ -7,11 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MJCoffee</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../style/adminDesign.css">
   <link rel="stylesheet" href="../style/adminTableDesign.css">
   <script defer src="active_link.js"></script>
@@ -21,12 +28,14 @@
   <!-- For Navbar -->
   <?php
   include('adminNavbar.php')
-  ?>
+    ?>
   <br><br><br><br><br>
 
   <div class="container">
     <div class="row">
-      <h5 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-size: 30px; color: #9A4444; margin-left:10px;">Customers Order History</h5>
+      <h5
+        style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-size: 30px; color: #9A4444; margin-left:10px;">
+        Customers Order History</h5>
     </div>
   </div><br>
 
@@ -38,7 +47,8 @@
             <div class="table-responsive">
               <div class="card">
                 <div class="card-body p-0">
-                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true"
+                    style="position: relative; height: 700px">
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #9A4444;">
                         <tr>
@@ -56,17 +66,30 @@
                           $stmt = $conn->prepare("SELECT * FROM ordersummary Order By created_at DESC");
                           $stmt->execute();
                           foreach ($stmt->fetchAll() as $row) {
-                        ?>
+
+                            $status_color = '';
+                            if ($row['status'] == 'in progress') {
+                              $status_color = 'orange';
+                            } elseif ($row['status'] == 'cancelled') {
+                              $status_color = 'red';
+                            } elseif ($row['status'] == 'completed') {
+                              $status_color = 'Green';
+                            }
+                            ?>
                             <tr>
                               <td class="text-center"><?php echo $row['orderdate']; ?></td>
                               <td class="text-center"><?php echo $row['orderID']; ?></td>
                               <td class="text-center">₱ <?php echo number_format($row['totalprice'], 2); ?></td>
-                              <td class="text-center"><?php echo $row['status']; ?></td>
-                               <!--------------------------------------- Eye button ----------------------------------------------->
                               <td class="text-center">
-                                <a href="adminCustomerOrderEdit.php?orderID=<?php echo $row['orderID']; ?>"><i class="bi bi-eye-fill" style="font-size: 24px; color:#9A4444;"></i></a>
+                                <span
+                                  style="color: <?php echo $status_color; ?>;"><?php echo $row['status']; ?></span>
                               </td>
-                            </tr>
+                              <!--------------------------------------- Eye button ----------------------------------------------->
+                          <td class="text-center">
+                            <a href="adminCustomerOrderEdit.php?orderID=<?php echo $row['orderID']; ?>"><i
+                                class="bi bi-eye-fill" style="font-size: 24px; color:#9A4444;"></i></a>
+                          </td>
+                        </tr>
                         <?php
                           }
                         } catch (PDOException $e) {

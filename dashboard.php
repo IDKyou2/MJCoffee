@@ -24,6 +24,10 @@
 
   <?php
   require_once("navbar.php");
+
+  // In dashboard.php form:
+  $old = $_SESSION['signup_input'] ?? [];
+  unset($_SESSION['signup_input']); // clear after use
   ?>
   <br>
 
@@ -107,7 +111,7 @@
     <div class="container">
       <div class="row">
         <div class="menu_header">
-          <p>Smoothies</p>
+          <p>Smoothiesxx</p>
           <div class="end_menu_header d-flex align-items-center">
             <p class="right">See more</p>
             <a href="menu.php">
@@ -119,6 +123,7 @@
     </div>
     <br>
 
+    <!-- Smoothies button container -->
     <div class="container">
       <div class="row">
         <?php
@@ -192,7 +197,7 @@
                     <form action="registration.php" method="post">
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="username"
-                          placeholder="Username" required style="border: black 1px solid;" />
+                          placeholder="Username" value="<?php echo htmlspecialchars($old['username'] ?? ''); ?>"  style="border: black 1px solid;" required />
             
                         <style>
                           /* Custom CSS for smooth transitions */
@@ -212,18 +217,18 @@
 
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="name" placeholder="Name"
-                          style="border: black 1px solid; " required />
+                          style="border: black 1px solid; " value="<?php echo htmlspecialchars($old['name'] ?? ''); ?>" required />
                       </div>
 
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="address"
-                          placeholder="Your Permanent Address" style="border: black 1px solid;" required />
+                          placeholder="Your Permanent Address" style="border: black 1px solid;" value="<?php echo htmlspecialchars($old['address'] ?? ''); ?>" required />
                       </div>
 
                       <div class="outer_input">
                         <input type="text" id="form2Example11" class="form-control" name="phonenumber" maxlength="11"
                           oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                          placeholder="Phone Number Ex. 09254789621" style="border: black 1px solid;" required />
+                          placeholder="Phone Number Ex. 09254789621" style="border: black 1px solid;" value="<?php echo htmlspecialchars($old['phonenumber'] ?? ''); ?>" required />
                       </div>
 
                       <div class="outer_input">

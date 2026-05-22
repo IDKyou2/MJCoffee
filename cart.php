@@ -136,12 +136,18 @@
                                             <input type="hidden" name="customerID"
                                                 value="<?php echo isset($_SESSION['customerID']) ? $_SESSION['customerID'] : ''; ?>">
 
+
                                             <input class="quan_input" type="number" name="quantity"
                                                 style="width: 70px; border-radius: 10px; text-align: center;" min="1" max="50"
                                                 value="<?php echo $item['quantity']; ?>">
+
                                         </td>
+
+
                                         <td>
-                                            <p class="fw-normal mb-1"><?php echo $item['menuprice'] * $item['quantity']; ?> </p>
+                                            <p class="fw-normal mb-1" ?>
+                                                <?php echo $item['menuprice'] * $item['quantity']; ?>
+                                            </p>
                                         </td>
                                         <?php if (isset($_SESSION['update_success']) && $_SESSION['update_success'] == true): ?>
                                             <script>
@@ -151,14 +157,16 @@
                                                     text: 'Quantity updated successfully.'
                                                 });
                                             </script>
-                                            <?php
+                                        <?php
                                             // Unset the session variable after displaying the alert
                                             unset($_SESSION['update_success']);
                                         endif;
                                         ?>
                                         <td>
                                             <!------------------------------- Update button -------------------------------->
-                                            <button type="submit" class="updateBtn"><i class=""></i> Update Cart</button>
+                                            <button type="submit" class="updateBtn"><i class=""></i> Save changes
+
+                                            </button>
                                             <!------------------------------- Delete button -------------------------------->
                                             <a href="remove_cart.php?fooditemID=<?php echo $item['fooditemID']; ?>&customerID=<?php echo $customerID; ?>&quantity=<?php echo $item['quantity']; ?>"
                                                 class="deleteBtn"><i class="bi bi-trash"></i> Delete</a>
@@ -257,19 +265,31 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'error'): ?>
                 Swal.fire('Error', '<?php echo $_SESSION['checkout_message']; ?>', 'error');
-                <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
+            <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
             endif; ?>
 
             <?php if (isset($_SESSION['checkout_status']) && $_SESSION['checkout_status'] == 'success'): ?>
                 Swal.fire('Success', '<?php echo $_SESSION['checkout_message']; ?>', 'success');
-                <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
+            <?php unset($_SESSION['checkout_status'], $_SESSION['checkout_message']);
             endif; ?>
         });
     </script>
     <br><br>
+
+    <script>
+        function updatePrice(input) {
+            const price = parseFloat(input.dataset.price);
+            const quantity = parseInt(input.value) || 1;
+            const itemId = input.dataset.id;
+
+            // Update the specific item total using its unique id
+            const priceDisplay = document.getElementById('total-' + itemId);
+            priceDisplay.textContent = price * quantity;
+        }
+    </script>
 </body>
 
 </html>

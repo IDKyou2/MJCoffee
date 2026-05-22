@@ -12,16 +12,16 @@
 
     <footer>
         <div class="foot-container">
-            <p class="foot_head">
-            <div class="trademark">MJCoffee</div>
-            <div class="contact">Contact Number: 09503859999</div>
-            </p>
+          <div class="foot_head">
+    <div class="trademark">MJCoffee</div>
+</div>
             <div class="footer_img">
                 <img src="image/gmail.svg" alt="gmail">
                 <a href="" target="_blank">
                     <img src="image/fb.png" alt="Facebook Icon" />
                 </a>
             </div>
+            <br><br>
             <p class="last">
                 Copyrights @2023 All right reserved
             </p>
